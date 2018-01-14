@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+        <div>
+            <a class="btn btn-default" href="/category/create">Add</a></div>
+        <div class="row">
+            <div class="col-md-3 "></div>
+            <div class="col-md-6">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>View Detail</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for ct in category %}
+                        <tr>
+                            <td>{{ ct.id }}</td>
+                            <td>{{ ct.name }}</td>
+                            <td><a href="category/detail/{{ ct.id }}" class="btn btn-primary">View</a></td>
+                            <td><a href="category/edit/{{ ct.id }}" class="btn btn-success">Edit</a></td>
+                            <td><a href="category/delete/{{ ct.id }}" class="btn btn-danger">Delete</a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+
+
+{% endblock %}
+
